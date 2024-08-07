@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Programs\\asp net\\WalmartBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CC9D4436-5896-498B-891D-8829A0905635}|WalmartBackend\\WalmartBackend.csproj|d:\\programs\\asp net\\walmartbackend\\walmartbackend\\datacontext\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC9D4436-5896-498B-891D-8829A0905635}|WalmartBackend\\WalmartBackend.csproj|solutionrelative:walmartbackend\\datacontext\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC9D4436-5896-498B-891D-8829A0905635}|WalmartBackend\\WalmartBackend.csproj|d:\\programs\\asp net\\walmartbackend\\walmartbackend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC9D4436-5896-498B-891D-8829A0905635}|WalmartBackend\\WalmartBackend.csproj|solutionrelative:walmartbackend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC9D4436-5896-498B-891D-8829A0905635}|WalmartBackend\\WalmartBackend.csproj|d:\\programs\\asp net\\walmartbackend\\walmartbackend\\walmartbackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CC9D4436-5896-498B-891D-8829A0905635}|WalmartBackend\\WalmartBackend.csproj|solutionrelative:walmartbackend\\walmartbackend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\Programs\\asp net\\WalmartBackend\\WalmartBackend\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "WalmartBackend\\Models\\Product.cs",
+              "ToolTip": "D:\\Programs\\asp net\\WalmartBackend\\WalmartBackend\\Models\\Product.cs",
+              "RelativeToolTip": "WalmartBackend\\Models\\Product.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T10:04:10.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationContext.cs",
+              "DocumentMoniker": "D:\\Programs\\asp net\\WalmartBackend\\WalmartBackend\\DataContext\\ApplicationContext.cs",
+              "RelativeDocumentMoniker": "WalmartBackend\\DataContext\\ApplicationContext.cs",
+              "ToolTip": "D:\\Programs\\asp net\\WalmartBackend\\WalmartBackend\\DataContext\\ApplicationContext.cs",
+              "RelativeToolTip": "WalmartBackend\\DataContext\\ApplicationContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T10:00:08.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WalmartBackend",
+              "DocumentMoniker": "D:\\Programs\\asp net\\WalmartBackend\\WalmartBackend\\WalmartBackend.csproj",
+              "RelativeDocumentMoniker": "WalmartBackend\\WalmartBackend.csproj",
+              "ToolTip": "D:\\Programs\\asp net\\WalmartBackend\\WalmartBackend\\WalmartBackend.csproj",
+              "RelativeToolTip": "WalmartBackend\\WalmartBackend.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-07T09:58:07.64Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
