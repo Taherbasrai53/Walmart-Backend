@@ -9,5 +9,11 @@ namespace WalmartBackend.Models
         public bool IsOpen {  get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime CheckoutAt { get; set; }
+        public string OrderItems {  get; set; } 
+    }
+
+    public class EndSessionModel
+    {
+        public string OrderItems { get; set; }
     }
 }

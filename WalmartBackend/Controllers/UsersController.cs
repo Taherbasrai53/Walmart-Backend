@@ -37,7 +37,8 @@ namespace WalmartBackend.Controllers
                  {
                     new Claim(JwtRegisteredClaimNames.Sub, _config["Jwt:Subject"]),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim("userId", user.UserId.ToString())                    
+                    new Claim("userId", user.UserId.ToString()),
+                    new Claim("userName", user.UserName.ToString()) 
                  };
 
                 var token = new JwtSecurityToken

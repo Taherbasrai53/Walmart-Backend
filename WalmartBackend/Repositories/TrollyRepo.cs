@@ -8,7 +8,7 @@ namespace WalmartBackend.Repositories
 {
     public interface ITrollyRepo
     {
-        Task<TrollyResponse> ScanTrolly(int id, int userId);
+        Task<Object> ScanTrolly(int id, int userId);
     }
     public class TrollyRepo: ITrollyRepo
     {
@@ -24,7 +24,7 @@ namespace WalmartBackend.Repositories
             _commonHelper = commonHelper;
         }
 
-        public async Task<TrollyResponse> ScanTrolly(int id, int userId)
+        public async Task<Object> ScanTrolly(int id, int userId)
         {
             SqlConnection sqlConn = null;
             try
@@ -45,14 +45,19 @@ namespace WalmartBackend.Repositories
                 //sqlComm.ExecuteNonQuery();
                 SqlDataReader reader = sqlComm.ExecuteReader();
 
-                int returnValue = returnParameter.Value != DBNull.Value && returnParameter.Value != null ? (int)returnParameter.Value : -1; // Use a default value like -1 for null
+                int returnValue = returnParameter.Value != DBNull.Value && returnParameter.Value != null ? (int)returnParameter.Value : 0; // Use a default value like -1 for null
 
 
                 //int returnValue = (int)returnParameter.Value;
                 Console.WriteLine("returnValue "+returnValue);
                 if (returnValue == 1)
                 {
-                    return null;
+                    return new Response(false, "Trolly already engaged");
+                }
+
+                if (returnValue == -1)
+                {
+                    return new Response(false, "Trolly Does not exist");
                 }
 
                 

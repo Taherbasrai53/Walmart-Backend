@@ -20,6 +20,28 @@ namespace WalmartBackend.Controllers
             _orderItemsRepo = orderItemsRepo;
         }
 
+        [HttpPut("Update")]
+        [Authorize]
+        public async Task<ActionResult> UpdateItem([FromBody] OrderItems req)
+        {
+            try
+            {
+                return Ok(_orderItemsRepo.UpdateOrderItem(req));
+            }
+            catch (Exception ex) { return Problem("something went wrong"); }
+        }
+
+        [HttpDelete("Delete")]
+        [Authorize]
+        public async Task<ActionResult> DeleteItem([FromQuery] int id)
+        {
+            try
+            {
+                return Ok(_orderItemsRepo.DeleteOrderItem(id));
+            }
+            catch (Exception ex) { return Problem("something went wrong"); }
+        }
+
         [HttpPost("AddItem")]
         [Authorize]
 

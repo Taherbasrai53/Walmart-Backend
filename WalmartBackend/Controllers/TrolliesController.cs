@@ -32,9 +32,9 @@ namespace WalmartBackend.Controllers
 
                 Console.WriteLine(TokenUserId+" "+ id);
                 var res = _trollyRepo.ScanTrolly(id, TokenUserId);
-                if (res.Result == null)
+                if (res.Result is Response)
                 {
-                    return BadRequest(new Response(false, "Trolly already engaged, please scan a different trolly"));
+                    return BadRequest(res.Result);
                 }
 
                 return Ok(res);

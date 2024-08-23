@@ -42,6 +42,22 @@ namespace WalmartBackend.Controllers
             }
         }
 
+        [HttpGet("GetByName")]
+        [Authorize]
+
+        public async Task<ActionResult> GetByName([FromQuery] string name)
+        {
+            try
+            {               
+                var product = await _dbContext.Products.Where(p => p.ProductName == name).FirstOrDefaultAsync();
+
+                return Ok(product);
+            }
+            catch (Exception ex)
+            {
+                return Problem("Something went wrong " + ex);
+            }
+        }
         [HttpPost("AddProduct")]
         public async Task<ActionResult> AddProduct([FromForm] AddProductModel req)
         {

@@ -19,4 +19,9 @@ namespace WalmartBackend.Models
         public string ProductInventory { get; set; }
         public string ProductPrice { get; set; }
     }
+
+    public class ExcessProducts : Product
+    {
+        public int Quantity { get; set; }
+    }
 }

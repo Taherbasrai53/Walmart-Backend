@@ -9,6 +9,8 @@ namespace WalmartBackend.Repositories
     {
         Task<List<OrderItemsResponse>> GetMy(int id);
         Task<Response> AddOrderItem(OrderItems req);
+        Task<Response> DeleteOrderItem(int id);
+        Task<Response> UpdateOrderItem(OrderItems req);
     }
     public class OrderItemsRepo:IOrderItemsRepo
     {
@@ -18,6 +20,8 @@ namespace WalmartBackend.Repositories
         #region 
         const string PROC_ORDERITEMS_ADD = "dbo.Proc_OrderItems_Add";
         const string PROC_ORDERITEMS_GETMY = "dbo.Proc_OrderItems_GetMy";
+        const string PROC_ORDERITEMS_UPDATE = "dbo.Proc_OrderItems_Update";
+        const string PROC_ORDERITEMS_DELETE = "dbo.Proc_OrderItems_Delete";
         #endregion
 
         public OrderItemsRepo(ApplicationDbContext dbContext, ICommonHelper commonHelper)
@@ -82,6 +86,7 @@ namespace WalmartBackend.Repositories
             }
         }
 
+        
         public async Task<Response> AddOrderItem(OrderItems req)
         {
             SqlConnection sqlConn = null;
@@ -116,6 +121,90 @@ namespace WalmartBackend.Repositories
                 }
 
                 return new Response(true, "Added to Cart successfully");
+
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (sqlConn != null)
+                {
+                    try
+                    {
+                        Console.WriteLine("closing");
+                        sqlConn.Close();
+                    }
+                    catch { }
+                }
+            }
+        }
+        public async Task<Response> UpdateOrderItem(OrderItems req)
+        {
+            SqlConnection sqlConn = null;
+            try
+            {
+                sqlConn = new SqlConnection(_commonHelper.GetConnectionString());
+                sqlConn.Open();
+                SqlCommand sqlComm = sqlConn.CreateCommand();
+                sqlComm.CommandText = PROC_ORDERITEMS_UPDATE;
+                sqlComm.CommandType = System.Data.CommandType.StoredProcedure;
+
+                sqlComm.Parameters.AddWithValue("@p_Id", req.Id);
+                sqlComm.Parameters.AddWithValue("@p_OrderId", req.OrderId);
+                sqlComm.Parameters.AddWithValue("@p_ProductId", req.ProductId);
+                sqlComm.Parameters.AddWithValue("@p_Quantity", req.Quantity);
+
+
+                //SqlParameter returnParameter = new SqlParameter();
+                //returnParameter.Direction = System.Data.ParameterDirection.ReturnValue;
+                //sqlComm.Parameters.Add(returnParameter);
+
+                sqlComm.ExecuteNonQuery();                
+
+                return new Response(true, "Cart Edited successfully");
+
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (sqlConn != null)
+                {
+                    try
+                    {
+                        Console.WriteLine("closing");
+                        sqlConn.Close();
+                    }
+                    catch { }
+                }
+            }
+        }
+
+        public async Task<Response> DeleteOrderItem(int id)
+        {
+            SqlConnection sqlConn = null;
+            try
+            {
+                sqlConn = new SqlConnection(_commonHelper.GetConnectionString());
+                sqlConn.Open();
+                SqlCommand sqlComm = sqlConn.CreateCommand();
+                sqlComm.CommandText = PROC_ORDERITEMS_DELETE;
+                sqlComm.CommandType = System.Data.CommandType.StoredProcedure;
+
+                sqlComm.Parameters.AddWithValue("@p_Id", id);                
+
+
+                //SqlParameter returnParameter = new SqlParameter();
+                //returnParameter.Direction = System.Data.ParameterDirection.ReturnValue;
+                //sqlComm.Parameters.Add(returnParameter);
+
+                sqlComm.ExecuteNonQuery();
+
+                return new Response(true, "Cart Deleted successfully");
 
             }
             catch
